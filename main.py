@@ -3,7 +3,7 @@ import random
 
 def play_game():
     rand_num = random.randint(1, 100)
-    attempts = 0  # Инициализация счетчика попыток
+    try_count = 0
 
     print('Hello!! I guessed an integer from 1 to 100, try to guess it')
 
@@ -18,9 +18,9 @@ def play_game():
             if not is_valid(req):
                 print("Your number is out of range (1-100). Try again.")
             else:
-                attempts += 1  # Увеличение счетчика попыток
+                try_count += 1
                 if req == rand_num:
-                    print('Congratulations!!! You won!!!')
+                    print('Congratulations!!! You won!!! Try counter = ', try_count)
                     break
                 elif req > rand_num:
                     print("Your number is bigger than mine.")
